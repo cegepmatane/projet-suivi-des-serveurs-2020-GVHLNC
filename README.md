@@ -7,3 +7,11 @@
 https://www.tikenix.me/nagios/
 - user : nagiosadmin 
 - mdp : toad
+
+
+## Guillaume Vernaz
+
+- [lien Wordpress](http://www.botfrank.zonedns.education/)
+- nagios : http://www.botfrank.com/nagios
+- user : nagiosadmin
+- mdp : password
