@@ -231,7 +231,7 @@ command_line /usr/local/nagiosgraph/bin/insert.pl
 nano /usr/local/nagios/etc/objects/templates.cfg
 
 define service {
-![](https://github.com/cegepmatane/projet-serveur-web-2020-KennyMarechal-1/blob/master/doc/images/config_exemple.png)
+![](https://github.com/cegepmatane/projet-suivi-des-serveurs-2020-GVHLNC/blob/master/doc/image%20kenny/1.png)
 }
 ## ALLER DANS CHANGER LE USE DANS LES DEFINE_SERVICE POUR NOTRE TEMPLATE
 nano /usr/local/nagios/etc/objects/localhost.cfg
@@ -239,7 +239,7 @@ nano /usr/local/nagios/etc/objects/localhost.cfg
 ex :
 
 define service {
-![](https://github.com/cegepmatane/projet-serveur-web-2020-KennyMarechal-1/blob/master/doc/images/config_exemple.png)
+![](https://github.com/cegepmatane/projet-suivi-des-serveurs-2020-GVHLNC/blob/master/doc/image%20kenny/2.png)
 }
 
 ## ACTIVER HTTPS
