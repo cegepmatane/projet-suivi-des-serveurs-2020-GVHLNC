@@ -224,7 +224,6 @@ define command {
 command_name process-service-perfdata-for-nagiosgraph
 
 command_line /usr/local/nagiosgraph/bin/insert.pl
-
 }
 
 ## CRÉER UN TEMPLATE POUR NOS SERVICES
