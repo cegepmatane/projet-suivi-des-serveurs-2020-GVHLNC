@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount unit for lxd, revision 18520
+Before=snapd.service
+
+[Mount]
+What=/var/lib/snapd/snaps/lxd_18520.snap
+Where=/snap/lxd/18520
+Type=squashfs
+Options=nodev,ro,x-gdu.hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target
