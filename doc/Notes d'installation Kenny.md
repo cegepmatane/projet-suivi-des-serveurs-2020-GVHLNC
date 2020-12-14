@@ -1,6 +1,7 @@
 ## Automatisation avec CRON
 
 - crontab -e
+- @midnight /pathfile.sh
 
 ![](https://github.com/cegepmatane/projet-suivi-des-serveurs-2020-GVHLNC/blob/master/doc/image%20kenny/3.png)
 
