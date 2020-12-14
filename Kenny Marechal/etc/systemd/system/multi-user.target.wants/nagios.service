@@ -1,0 +1,15 @@
+[Unit]
+Description=Nagios Core 4.4.2
+Documentation=https://www.nagios.org/documentation
+After=network.target local-fs.target
+
+[Service]
+Type=forking
+ExecStartPre=/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+ExecStart=/usr/local/nagios/bin/nagios -d /usr/local/nagios/etc/nagios.cfg
+ExecStop=/usr/bin/kill -s TERM ${MAINPID}
+ExecStopPost=/usr/bin/rm -f /usr/local/nagios/var/rw/nagios.cmd
+ExecReload=/usr/bin/kill -s HUP ${MAINPID}
+
+[Install]
+WantedBy=multi-user.target

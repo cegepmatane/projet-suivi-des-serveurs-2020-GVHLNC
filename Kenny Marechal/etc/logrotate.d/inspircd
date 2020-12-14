@@ -1,0 +1,18 @@
+/var/log/inspircd.log {
+    weekly
+    notifempty
+    missingok
+    create 0640 irc adm
+    rotate 12
+    compress
+    delaycompress
+    postrotate
+        if [ -e /run/systemd/system ] ; then
+            if systemctl -q is-active inspircd ; then
+                systemctl kill --signal=HUP inspircd
+            fi
+        elif [ -x /etc/init.d/inspircd ] ; then
+            /etc/init.d/inspircd reload
+        fi
+    endscript
+}

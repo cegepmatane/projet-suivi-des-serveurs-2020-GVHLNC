@@ -1,0 +1,5 @@
+
+# Possibly add more parameters to inspircd here. Make sure to retain
+# any pre-existing value of IRCDARGS unless you know what you are doing.
+
+#IRCDARGS="$IRCDARGS ..."

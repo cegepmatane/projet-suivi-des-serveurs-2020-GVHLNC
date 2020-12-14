@@ -1,0 +1,58 @@
+Debian JED startup scheme
+-------------------------
+
+JED on Debian has a startup scheme that will help packages providing add-on
+support to get their code automatically loaded in a site-wide manner.
+
+* Instead of a config file, we use a config directory: At startup, JED will
+  evaluate all "*.sl" scripts in /etc/jed.d/.
+
+  Every package has the right to place files into /etc/jed.d/.
+
+  Use names like NN<name>.sl (where "NN" is a two-digit number). The files
+  will be parsed in alphabetical order, i.e. files whose name starts with
+  "00" will be loaded first and with "99" last.  (See Debian-Jed-Policy.txt
+  for details).
+
+* Evalutation of /etc/jed.d/ can be suppressed by the --skip-debian-startup
+  command line option.
+
+* /etc/jed.d/ is not evaluated if Jed is started as `jed-script`.
+
+  If a script depends on the Debian configuration, it can call the function
+  debian_startup() defined in defaults.sl.
+
+
+* Files in /etc/jed.d/ are configuration files. The system administrator can
+  modify them or add scripts for site-wide Jed configuration.
+
+* The order of parsing the JED config settings is thus as follows:
+
+   * /usr/share/jed/lib/site.sl     % upstream basic setup
+
+   * /usr/share/jed/lib/defaults.sl % Debian provided code for evaluation of
+                                    % the "jed.d" directory contents
+
+   % no call to /etc/jed.conf
+
+   * /etc/jed.d/*.sl                % package configuration files
+
+   * ~/.jed/jed.rc                  % user config file (if it exists),
+                                    % skipped with the -n command line option)
+     or ~/.jedrc                    % if ~/.jed/ doesnot exist
+
+
+   * keybindings file               % either user-set in jed.rc or
+                                    % according to _Jed_Default_Emulation
+                                    % default is /usr/share/jed/lib/emacs.sl
+
+   * command_line_options
+
+   * files given on the command line
+
+
+
+-- Rafael Laboissiere <rafael@debian.org> Thu Oct 21 18:28:39 CEST 1999
+-- Updated by Charl P. Botha <cpbotha@debian.org> Sun Jun 3 02:14:58 CEST 2001
+-- and again by cpbotha with Rafael's new scheme Tue Nov 13 22:00:49 CET 2001
+-- updated by G. Milde, 2006-05-16
