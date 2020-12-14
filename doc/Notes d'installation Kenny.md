@@ -16,14 +16,14 @@ usermod -a -G nagcmd nagios
 
 usermod -a -G nagcmd www-data
 
-TÉLÉCHARGER LES PACKAGES NAGIOS
-mkdir /downloads
+## TÉLÉCHARGER LES PACKAGES NAGIOS
+mkdir downloads
 
-cd /downloads
+cd downloads
 
 wget https://ufpr.dl.sourceforge.net/project/nagios/nagios-4.x/nagios-4.4.2/nagios-4.4.2.tar.gz
 
-EXTRAIRE,COMPILER ET INSTALLER LE PACKAGE NAGIOS
+## EXTRAIRE,COMPILER ET INSTALLER LE PACKAGE NAGIOS
 tar -zxvf nagios-4.4.2.tar.gz
 
 cd nagios-4.4.2/
@@ -51,8 +51,6 @@ New password: *****
 Re-type new password: *****
 Adding password for user nagiosadmin
 
-Marque a moi même password -> même que user brandon
-
 ## S’ASSURER QUE LES MODULES APACHE SONT ACTIVER
 sudo a2enmod rewrite
 
@@ -68,7 +66,7 @@ service nagios start
 
 Une fois nagios démarrer aller sur votre navigateur et ouvrir votre adresse ip /nagios et se connecter avec le compte administrateur : nagiosadmin et votre mot de passe.
 
-ex: 51.161.33.43/nagios
+ex: x.x.x.x/nagios
 
 # INSTALLATION DES PLUGINS
 ## INSTALLATION DES PACKAGES REQUIS
