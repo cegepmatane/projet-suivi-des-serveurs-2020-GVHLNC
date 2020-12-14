@@ -2,6 +2,8 @@
 
 - crontab -e
 
+![](https://github.com/cegepmatane/projet-suivi-des-serveurs-2020-GVHLNC/blob/master/doc/image%20kenny/3.png)
+
 ## ALLER CHERCHER LES BUILD ESSENTIALS
 apt-get install build-essential
 
